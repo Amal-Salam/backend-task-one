@@ -6,8 +6,8 @@ const app = express();
 app.get('/api', (req, res) => {
   const slack_name=req.query.slack_name;
   const track=req.query.track;
-  const githubFileUrl = `https://github.com/username/repo/blob/main/file_name.ext`;
-  const githubRepoUrl = `https://github.com/username/repo`;
+  const githubFileUrl = `https://github.com/Amal-Salam/backend-task-one/blob/main/app.js`;
+  const githubRepoUrl = `https://github.com/Amal-Salam/backend-task-one`;
 
   const response = {
     slack_name,
