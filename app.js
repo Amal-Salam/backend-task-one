@@ -1,5 +1,6 @@
 const express = require('express');
 const moment = require('moment');
+
 const app = express();
 
 app.get('/api', (req, res) => {
@@ -20,10 +21,8 @@ app.get('/api', (req, res) => {
   if (!slack_name || !track) {
     return res
       .status(400)
-      .json({ error: 'slack_name and track are required parameters' });
+      .json({ error: 'please note that slack_name and track parameters are required ' });
   }
-
-
   res.json(response);
 });
 
