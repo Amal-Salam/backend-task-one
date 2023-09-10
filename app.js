@@ -1,7 +1,7 @@
 const express = require('express');
 const moment = require('moment');
-
 const app = express();
+const PORT = process.env.PORT || 4000;
 
 app.get('/api', (req, res) => {
   const slack_name=req.query.slack_name;
@@ -21,11 +21,16 @@ app.get('/api', (req, res) => {
   if (!slack_name || !track) {
     return res
       .status(400)
-      .json({ error: 'please note that slack_name and track parameters are required and note the typing' });
+      .json({
+        error: 'please note that slack_name and track parameters are required and note the typing',
+      });
   }
+
+
   res.json(response);
 });
 
-app.listen(4000, () => {
-  console.log('Listening on port 4000');
-});
+
+  app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+  });
