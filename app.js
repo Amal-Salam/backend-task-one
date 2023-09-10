@@ -12,7 +12,7 @@ app.get('/api', (req, res) => {
   const response = {
     slack_name,
     current_day: moment().format('dddd'),
-    utc_time:moment().utc().format('YYYY-MM-DDTHH:mm:ssZ'),
+    utc_time:moment().utc().format('YYYY-MM-DDTHH:mm:ss[Z]'),
     track,
     github_file_url,
     github_repo_url,
