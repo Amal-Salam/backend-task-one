@@ -21,7 +21,7 @@ app.get('/api', (req, res) => {
   if (!slack_name || !track) {
     return res
       .status(400)
-      .json({ error: 'please note that slack_name and track parameters are required ' });
+      .json({ error: 'please note that slack_name and track parameters are required and note the typing' });
   }
   res.json(response);
 });
