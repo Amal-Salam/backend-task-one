@@ -6,16 +6,16 @@ const PORT = process.env.PORT || 4000;
 app.get('/api', (req, res) => {
   const slack_name=req.query.slack_name;
   const track=req.query.track;
-  const githubFileUrl = `https://github.com/Amal-Salam/backend-task-one/blob/main/app.js`;
-  const githubRepoUrl = `https://github.com/Amal-Salam/backend-task-one`;
+  const github_file_url = `https://github.com/Amal-Salam/backend-task-one/blob/main/app.js`;
+  const github_repo_url = `https://github.com/Amal-Salam/backend-task-one`;
 
   const response = {
     slack_name,
-    currentDay: moment().format('dddd'),
-    utcTime:moment().utc().format('YYYY-MM-DDTHH:mm:ssZ'),
+    current_day: moment().format('dddd'),
+    utc_time:moment().utc().format('YYYY-MM-DDTHH:mm:ssZ'),
     track,
-    githubFileUrl,
-    githubRepoUrl,
+    github_file_url,
+    github_repo_url,
     status_code: 200,
   };
   if (!slack_name || !track) {
